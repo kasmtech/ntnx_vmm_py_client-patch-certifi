@@ -1,3 +1,13 @@
+# Note on Dependency Update
+This repository is a modified version of the original NTNX Python package. The primary change made is to the dependency specification for the certifi package.
+
+The original dependency allowed versions up to and including certifi==2023.11.17, which has since been flagged with a critical vulnerability.
+To address this issue, the upper bound has been removed or adjusted to allow installation of newer, secure versions of certifi.
+
+⚠️ This change was made to ensure the package remains secure and functional in environments where vulnerability scanning is enforced.
+
+No other functional changes have been made unless explicitly noted.
+
 # Python Client For Nutanix Virtual Machine Management APIs
 
 The Python client for Nutanix Virtual Machine Management APIs is designed for Python client application developers offering them simple and flexible access to APIs that manage the life-cycle of virtual machines hosted on Nutanix.
