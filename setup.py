@@ -25,7 +25,7 @@ VERSION = "4.1.1"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 ~= 1.26", "six ~= 1.16", "certifi >=2020.4.5.1", "python-dateutil ~= 2.8", "pysocks ~= 1.7"]
+REQUIRES = ["urllib3 >=1.26,<3", "six ~= 1.16", "certifi >=2020.4.5.1", "python-dateutil ~= 2.8", "pysocks ~= 1.7"]
 
 package_root_path = os.path.abspath(os.path.dirname(__file__))
 readme_file_path = os.path.join(package_root_path, "README.md")
