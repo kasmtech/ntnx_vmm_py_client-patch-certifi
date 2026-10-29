@@ -1,15 +1,15 @@
 Metadata-Version: 2.1
 Name: ntnx-vmm-py-client
-Version: 4.1.1
+Version: 4.2.2
 Summary: Nutanix Virtual Machine Management APIs
 Home-page: 
 Author-email: sdk@nutanix.com
 Keywords: Nutanix,v4,SDK,Nutanix Virtual Machine Management APIs
 Description-Content-Type: text/markdown
 License-File: LICENSE.txt
-Requires-Dist: urllib3~=1.26
+Requires-Dist: urllib3>=1.26
 Requires-Dist: six~=1.16
-Requires-Dist: certifi>=2020.4.5.1
+Requires-Dist: certifi>=2024.7.4
 Requires-Dist: python-dateutil~=2.8
 Requires-Dist: pysocks~=1.7
 
@@ -23,8 +23,20 @@ The Python client for Nutanix Virtual Machine Management APIs is designed for Py
 - Use standard methods for installation.
 
 ## Version
-- API version: v4.1
-- Package version: 4.1.1
+- API version: v4.2
+- Package version: 4.2.2
+## Version Negotiation
+By default, the client negotiates the API version with the server to ensure compatibility. Version negotiation is **enabled by default**. To disable version negotiation and use a fixed API version, set the `allow_version_negotiation` parameter to `False` when creating the ApiClient:
+
+```python
+import ntnx_vmm_py_client
+
+# Disable version negotiation
+api_client = ntnx_vmm_py_client.ApiClient(allow_version_negotiation=False)
+```
+
+When version negotiation is disabled, the client will use the SDK's default API version.
+
 
 ## Requirements.
 Python 3.6, 3.7, 3.8 and 3.9 are fully supported and tested.
@@ -230,7 +242,7 @@ The list of filterable and sortable fields with expansion keys can be found in t
 
 ## API Reference
 
-This library has a full set of [API Reference Documentation](https://developers.nutanix.com/sdk-reference?namespace=vmm&version=v4.1&language=python). This documentation is auto-generated, and the location may change.
+This library has a full set of [API Reference Documentation](https://developers.nutanix.com/sdk-reference?namespace=vmm&version=v4.2&language=python). This documentation is auto-generated, and the location may change.
 
 ## License
 This library is licensed under Apache 2.0 license. Full license text is available in [LICENSE](https://www.apache.org/licenses/LICENSE-2.0.txt).

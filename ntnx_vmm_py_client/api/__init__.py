@@ -15,5 +15,7 @@ from ntnx_vmm_py_client.api.template_placement_policies_api import TemplatePlace
 from ntnx_vmm_py_client.api.templates_api import TemplatesApi
 from ntnx_vmm_py_client.api.vm_api import VmApi
 from ntnx_vmm_py_client.api.vm_anti_affinity_policies_api import VmAntiAffinityPoliciesApi
+from ntnx_vmm_py_client.api.vm_guest_customization_profiles_api import VmGuestCustomizationProfilesApi
 from ntnx_vmm_py_client.api.vm_host_affinity_policies_api import VmHostAffinityPoliciesApi
 from ntnx_vmm_py_client.api.vm_recovery_points_api import VmRecoveryPointsApi
+from ntnx_vmm_py_client.api.vm_startup_policies_api import VmStartupPoliciesApi

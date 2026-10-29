@@ -1,13 +1,3 @@
-# Note on Dependency Update
-This repository is a modified version of the original NTNX Python package. The primary change made is to the dependency specification for the certifi package.
-
-The original dependency allowed versions up to and including certifi==2023.11.17, which has since been flagged with a critical vulnerability.
-To address this issue, the upper bound has been removed or adjusted to allow installation of newer, secure versions of certifi.
-
-⚠️ This change was made to ensure the package remains secure and functional in environments where vulnerability scanning is enforced.
-
-No other functional changes have been made unless explicitly noted.
-
 # Python Client For Nutanix Virtual Machine Management APIs
 
 The Python client for Nutanix Virtual Machine Management APIs is designed for Python client application developers offering them simple and flexible access to APIs that manage the life-cycle of virtual machines hosted on Nutanix.
@@ -18,8 +8,20 @@ The Python client for Nutanix Virtual Machine Management APIs is designed for Py
 - Use standard methods for installation.
 
 ## Version
-- API version: v4.1
-- Package version: 4.1.1
+- API version: v4.2
+- Package version: 4.2.2
+## Version Negotiation
+By default, the client negotiates the API version with the server to ensure compatibility. Version negotiation is **enabled by default**. To disable version negotiation and use a fixed API version, set the `allow_version_negotiation` parameter to `False` when creating the ApiClient:
+
+```python
+import ntnx_vmm_py_client
+
+# Disable version negotiation
+api_client = ntnx_vmm_py_client.ApiClient(allow_version_negotiation=False)
+```
+
+When version negotiation is disabled, the client will use the SDK's default API version.
+
 
 ## Requirements.
 Python 3.6, 3.7, 3.8 and 3.9 are fully supported and tested.
@@ -225,10 +227,17 @@ The list of filterable and sortable fields with expansion keys can be found in t
 
 ## API Reference
 
-This library has a full set of [API Reference Documentation](https://developers.nutanix.com/sdk-reference?namespace=vmm&version=v4.1&language=python). This documentation is auto-generated, and the location may change.
+This library has a full set of [API Reference Documentation](https://developers.nutanix.com/sdk-reference?namespace=vmm&version=v4.2&language=python). This documentation is auto-generated, and the location may change.
 
 ## License
 This library is licensed under Apache 2.0 license. Full license text is available in [LICENSE](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 ## Contact us
 In case of issues please reach out to us at the [mailing list](mailto:sdk@nutanix.com)
+
+## Reporting Issues
+
+This repository is a lightly modified fork of Nutanix's official `ntnx-vmm-py-client`.
+
+- **Issues with this specific patch** (the certifi constraint, or install/packaging problems it causes) — please use Kasm's central issue tracker: **[Kasm Workspaces Issue Tracker](https://github.com/kasmtech/workspaces-issues/issues)**
+- **Issues with the underlying SDK** (API behavior, authentication, retries, pagination, etc.) — please report these to Nutanix directly, as Kasm does not maintain the SDK code itself.
